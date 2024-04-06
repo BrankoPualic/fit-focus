@@ -16,3 +16,5 @@ export enum EWorkoutType {
   Bodybuilding = 4,
   Cardio = 5,
 }
+
+export enum ETest {}
