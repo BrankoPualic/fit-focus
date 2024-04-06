@@ -1,4 +1,4 @@
-import { EExperienceLevel, EGender, EWorkoutType } from './eNums';
+import { EExperienceLevel, EGender, EWorkoutType } from './enums';
 
 export interface IUserSigninDto {
   emailAddress: string;
@@ -20,4 +20,10 @@ export interface IUserDto {
   preferredWorkoutType: EWorkoutType;
   injured: boolean;
   registered: string;
+}
+
+export interface IUserBodyweightDto {
+  date: string;
+  bodyweight: number;
+  bodyfat: number | null;
 }

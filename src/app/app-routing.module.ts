@@ -6,6 +6,7 @@ import * as user from './pages/user/index';
 import { WorkoutsComponent } from './pages/workouts/workouts.component';
 import { signinGuard } from './guards/signin.guard';
 import { authGuard } from './guards/auth.guard';
+import { BodyweightComponent } from './pages/bodyweight/bodyweight.component';
 
 const routes: Routes = [
   {
@@ -21,12 +22,12 @@ const routes: Routes = [
   {
     path: 'profile',
     canActivate: [authGuard],
-    children: [
-      {
-        path: '',
-        component: user.UserComponent,
-      },
-    ],
+    component: user.UserComponent,
+  },
+  {
+    path: 'bodyweight',
+    canActivate: [authGuard],
+    component: BodyweightComponent,
   },
   {
     path: 'workouts',

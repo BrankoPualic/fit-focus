@@ -8,19 +8,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { AuthModule } from './modules/authentication.module';
 import { ErrorModule } from './modules/error.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ToastrModule } from 'ngx-toastr';
-import { AuthDirective } from './directives/auth.directive';
-import { WorkoutsComponent } from './pages/workouts/workouts.component';
 import { UserModule } from './modules/user.module';
-import { BsDropdownConfig, BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { SharedModule } from './modules/shared.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    AuthDirective,
-    WorkoutsComponent,
-  ],
+  declarations: [AppComponent, HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,12 +21,9 @@ import { BsDropdownConfig, BsDropdownModule } from 'ngx-bootstrap/dropdown';
     UserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    BsDropdownModule,
-    ToastrModule.forRoot({
-      positionClass: 'toast-top-center',
-    }),
+    SharedModule,
   ],
-  providers: [BsDropdownConfig],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

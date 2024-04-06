@@ -1,0 +1,42 @@
+[
+  {
+    "date": "2024-04-01",
+    "bodyweight": 84.7,
+    "bodyfat": 12.2
+  },
+  {
+    "date": "2024-04-02",
+    "bodyweight": 84.5,
+    "bodyfat": null
+  },
+  {
+    "date": "2024-04-03",
+    "bodyweight": 84.8,
+    "bodyfat": 12.3
+  },
+  {
+    "date": "2024-04-04",
+    "bodyweight": 84.6,
+    "bodyfat": null
+  },
+  {
+    "date": "2024-04-05",
+    "bodyweight": 84.9,
+    "bodyfat": null
+  },
+  {
+    "date": "2024-04-06",
+    "bodyweight": 84.7,
+    "bodyfat": 12.1
+  },
+  {
+    "date": "2024-04-07",
+    "bodyweight": 85.0,
+    "bodyfat": null
+  },
+  {
+    "date": "2024-04-08",
+    "bodyweight": 84.5,
+    "bodyfat": null
+  }
+]

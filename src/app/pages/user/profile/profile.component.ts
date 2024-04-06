@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../services/user.service';
 import { IUserDto } from '../../../common/interfaces';
-import { EExperienceLevel, EWorkoutType } from '../../../common/eNums';
+import { EExperienceLevel, EWorkoutType } from '../../../common/enums';
 
 @Component({
   selector: 'app-profile',

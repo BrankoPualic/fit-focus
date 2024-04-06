@@ -1,0 +1,52 @@
+<div class="background-image" style="height: 10rem"></div>
+<div class="container">
+  <div class="background-image-content">
+    <h2 style="font-size: 3rem" class="mt-5">Bodyweight</h2>
+  </div>
+  <div class="d-flex justify-content-between mt-3 flex-md-row flex-column">
+    <div class="col-md-6 col-12">
+      <div
+        class="d-flex justify-content-between align-items-center flex-sm-row flex-column"
+      >
+        <div>
+          <h4>Bodyweight</h4>
+          <h3 class="text-center fs-4">
+            {{ bodyweights[bodyweights.length - 1].bodyweight }} kg
+          </h3>
+        </div>
+        <div class="my-2">
+          <h4>Bodyfat Percentage</h4>
+          <h3 class="text-center fs-4">{{ getLatestBodyfatLog() ?? "-" }} %</h3>
+        </div>
+      </div>
+      <!-- Chart -->
+    </div>
+    <div class="col-md-4 col-12">
+      <div class="my-4">
+        <button class="btn btn-light border" (click)="logBodyweight()">
+          <i class="bi bi-plus-circle"></i> &nbsp;Add Bodyweight
+        </button>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Bodyweight</th>
+            <th scope="col">Bodyfat</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (bw of bodyweights; track $index) {
+          <tr>
+            <td>{{ bw.date | date : "mediumDate" }}</td>
+            <td>{{ bw.bodyweight }} kg</td>
+            <td>{{ bw.bodyfat ?? "-" }}</td>
+            <td><i class="bi bi-pencil"></i></td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
