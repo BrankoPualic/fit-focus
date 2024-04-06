@@ -11,9 +11,10 @@ import { ErrorModule } from './modules/error.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthDirective } from './directives/auth.directive';
+import { WorkoutsComponent } from './pages/workouts/workouts.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, AuthDirective],
+  declarations: [AppComponent, HeaderComponent, AuthDirective, WorkoutsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
