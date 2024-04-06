@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import * as auth from '../pages/authentication/index';
-import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [auth.SigninComponent],
-  imports: [BrowserModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   providers: [],
 })
 export class AuthModule {}

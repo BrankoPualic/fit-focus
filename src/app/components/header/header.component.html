@@ -32,21 +32,26 @@
       <li
         class="nav-item dropdown"
         style="margin-left: auto"
-        ngbDropdown
+        dropdown
+        #dropdown="bs-dropdown"
+        [autoClose]="true"
         *appAuth
       >
         <a
+          id="button-basic"
           class="nav-link dropdown-toggle"
-          ngbDropdownToggle
-          role="button"
-          id="navbarDropdown"
+          dropdownToggle
+          type="button"
+          aria-controls="dropdown-basic"
         >
           My profile
         </a>
         <div
           class="dropdown-menu dropdown-menu-end"
-          ngbDropdownMenu
-          aria-labelledby="navbarDropdown"
+          *dropdownMenu
+          id="dropdown-basic"
+          role="menu"
+          aria-labelledby="button-basic"
         >
           <a class="dropdown-item" routerLink="profile"
             ><i class="bi bi-person"></i> My profile</a

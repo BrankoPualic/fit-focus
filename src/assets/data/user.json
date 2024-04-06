@@ -1,0 +1,20 @@
+{
+  "firstName": "Adam",
+  "lastName": "Benecky",
+  "displayName": "Adamm221",
+  "country": "USA",
+  "city": "New York",
+  "age": "21",
+  "imageUrl": "https://randomuser.me/api/portraits/men/75.jpg",
+  "description": "Fitness enthusiast and aspiring bodybuilder.\nPassionate about pushing limits and achieving goals.",
+  "gender": 1,
+  "experienceLevel": 2,
+  "fitnessGoals": [
+    "Build muscle mass",
+    "Increase strength",
+    "Improve endurance"
+  ],
+  "preferredWorkoutType": 1,
+  "injured": false,
+  "registered": "2024-04-15T15:13:16.688Z"
+}

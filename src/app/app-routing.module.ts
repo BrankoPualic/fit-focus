@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import * as auth from './pages/authentication/index';
 import * as errors from './pages/errors/index';
+import * as user from './pages/user/index';
 import { WorkoutsComponent } from './pages/workouts/workouts.component';
 import { signinGuard } from './guards/signin.guard';
 import { authGuard } from './guards/auth.guard';
@@ -16,6 +17,16 @@ const routes: Routes = [
     path: 'authentication',
     component: auth.SigninComponent,
     canActivate: [signinGuard],
+  },
+  {
+    path: 'profile',
+    canActivate: [authGuard],
+    children: [
+      {
+        path: '',
+        component: user.UserComponent,
+      },
+    ],
   },
   {
     path: 'workouts',

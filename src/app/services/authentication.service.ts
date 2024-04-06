@@ -29,7 +29,7 @@ export class AuthenticationService {
           ) {
             this.signedinUser.next(user);
             this.toastr.success('Successfully signed in.', 'Welcome!');
-            localStorage.setItem('user', JSON.stringify(user));
+            localStorage.setItem('user', JSON.stringify(user.emailAddress));
             this.router.navigateByUrl('profile');
           } else
             this.toastr.error(

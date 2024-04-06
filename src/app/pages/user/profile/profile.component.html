@@ -1,0 +1,37 @@
+@if(user){
+<div
+  class="container background-image-content d-flex align-items-center flex-md-row flex-column mt-4"
+>
+  <div class="me-4">
+    <img
+      src="{{ user.imageUrl }}"
+      alt="user picture"
+      class="img-thumbnail rounded-circle"
+    />
+  </div>
+  <div style="color: white">
+    <h3 class="m-0">{{ user.displayName }}</h3>
+    <p class="m-0">{{ user.firstName }} {{ user.lastName }}</p>
+    <p class="m-0">{{ user.description }}</p>
+    <p>Joined: {{ user.registered | date : "longDate" }}</p>
+    <div class="d-flex align-items-center justify-content-start flex-wrap">
+      <span class="border me-2 mb-1 px-2 bg-primary"
+        >{{ user.city }}, {{ user.country }}</span
+      >
+      <span class="border me-2 mb-1 px-2 bg-primary">Age: {{ user.age }}</span>
+      <span class="border me-2 mb-1 px-2 bg-primary">{{
+        user.gender === 1 ? "Male" : "Female"
+      }}</span>
+      <span class="border me-2 mb-1 px-2 bg-primary">{{
+        getWorkoutTypeString(user.preferredWorkoutType)
+      }}</span>
+      <span class="border me-2 mb-1 px-2 bg-primary">{{
+        getUserExperienceLevel(user.experienceLevel)
+      }}</span>
+      @for (goal of user.fitnessGoals; track $index) {
+      <span class="border me-2 mb-1 px-2 bg-info">{{ goal }}</span>
+      }
+    </div>
+  </div>
+</div>
+}
