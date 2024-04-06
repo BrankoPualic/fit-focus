@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary px-sm-5">
+  <a class="navbar-brand" routerLink="">FitFocus</a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto w-100">
+      <li
+        *appAuth
+        class="nav-item"
+        routerLink="wourkouts"
+        routerLinkActive="active"
+        style="cursor: pointer"
+      >
+        <a class="nav-link">Wourkouts</a>
+      </li>
+      <li
+        *appAuth
+        class="nav-item"
+        routerLink="exercises"
+        routerLinkActive="active"
+        style="cursor: pointer"
+      >
+        <a class="nav-link">Exercises</a>
+      </li>
+      <li
+        *appAuth
+        class="nav-item"
+        routerLink="bodyweight"
+        routerLinkActive="active"
+        style="cursor: pointer"
+      >
+        <a class="nav-link">Bodyweight</a>
+      </li>
+      <li
+        class="nav-item dropdown"
+        style="margin-left: auto"
+        ngbDropdown
+        *appAuth
+      >
+        <a
+          class="nav-link dropdown-toggle"
+          ngbDropdownToggle
+          role="button"
+          id="navbarDropdown"
+        >
+          My profile
+        </a>
+        <div
+          class="dropdown-menu dropdown-menu-end"
+          ngbDropdownMenu
+          aria-labelledby="navbarDropdown"
+        >
+          <a class="dropdown-item" routerLink="profile"
+            ><i class="bi bi-person"></i> My profile</a
+          >
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="signout()" style="cursor: pointer"
+            ><i class="bi bi-box-arrow-right"></i> Sign out</a
+          >
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
