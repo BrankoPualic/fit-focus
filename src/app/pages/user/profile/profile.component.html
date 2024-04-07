@@ -19,14 +19,12 @@
         >{{ user.city }}, {{ user.country }}</span
       >
       <span class="border me-2 mb-1 px-2 bg-primary">Age: {{ user.age }}</span>
+      <span class="border me-2 mb-1 px-2 bg-primary">{{ user.gender }}</span>
       <span class="border me-2 mb-1 px-2 bg-primary">{{
-        user.gender === 1 ? "Male" : "Female"
+        user.preferredWorkoutType
       }}</span>
       <span class="border me-2 mb-1 px-2 bg-primary">{{
-        getWorkoutTypeString(user.preferredWorkoutType)
-      }}</span>
-      <span class="border me-2 mb-1 px-2 bg-primary">{{
-        getUserExperienceLevel(user.experienceLevel)
+        user.experienceLevel
       }}</span>
       @for (goal of user.fitnessGoals; track $index) {
       <span class="border me-2 mb-1 px-2 bg-info">{{ goal }}</span>

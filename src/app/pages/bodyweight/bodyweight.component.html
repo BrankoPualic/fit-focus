@@ -10,16 +10,20 @@
       >
         <div>
           <h4>Bodyweight</h4>
+          @if(bodyweights.length > 0){
           <h3 class="text-center fs-4">
             {{ bodyweights[bodyweights.length - 1].bodyweight }} kg
           </h3>
+          }
         </div>
         <div class="my-2">
           <h4>Bodyfat Percentage</h4>
           <h3 class="text-center fs-4">{{ getLatestBodyfatLog() ?? "-" }} %</h3>
         </div>
       </div>
-      <!-- Chart -->
+      <div class="mt-5">
+        <canvas id="canvas">{{ chart }}</canvas>
+      </div>
     </div>
     <div class="col-md-4 col-12">
       <div class="my-4">

@@ -20,19 +20,9 @@ const routes: Routes = [
     canActivate: [signinGuard],
   },
   {
-    path: 'profile',
-    canActivate: [authGuard],
-    component: user.UserComponent,
-  },
-  {
-    path: 'bodyweight',
-    canActivate: [authGuard],
-    component: BodyweightComponent,
-  },
-  {
-    path: 'workouts',
-    component: WorkoutsComponent,
-    canActivate: [authGuard],
+    path: '',
+    loadChildren: () =>
+      import('./modules/user.module').then((m) => m.UserModule),
   },
   {
     path: 'not-authorized',
