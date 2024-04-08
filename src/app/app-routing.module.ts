@@ -1,12 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import * as auth from './pages/authentication/index';
-import * as errors from './pages/errors/index';
-import * as user from './pages/user/index';
-import { WorkoutsComponent } from './pages/workouts/workouts.component';
 import { signinGuard } from './guards/signin.guard';
-import { authGuard } from './guards/auth.guard';
-import { BodyweightComponent } from './pages/bodyweight/bodyweight.component';
 
 const routes: Routes = [
   {
@@ -25,11 +20,10 @@ const routes: Routes = [
       import('./modules/user.module').then((m) => m.UserModule),
   },
   {
-    path: 'not-authorized',
-    component: errors.AuthorizationErrorComponent,
-    pathMatch: 'full',
+    path: '',
+    loadChildren: () =>
+      import('./modules/error.module').then((m) => m.ErrorModule),
   },
-  { path: '**', component: errors.NotFoundComponent },
 ];
 
 @NgModule({

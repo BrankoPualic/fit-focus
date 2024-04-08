@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { IUserBodyweightDto } from '../../common/interfaces';
-import Chart from 'chart.js/auto';
 
 @Component({
   selector: 'app-bodyweight',
@@ -10,7 +9,8 @@ import Chart from 'chart.js/auto';
 })
 export class BodyweightComponent implements OnInit {
   bodyweights: IUserBodyweightDto[] = [];
-  chart: any = [];
+  chartData: number[] = [];
+  chartLabels: string[] = [];
 
   constructor(private userService: UserService) {}
 
@@ -19,29 +19,19 @@ export class BodyweightComponent implements OnInit {
       next: (data) => {
         this.bodyweights = data.reverse();
 
-        const dateLabel = this.bodyweights.map((value) => {
-          const date = new Date(value.date);
-          const month = date.getMonth() + 1;
-          const day = date.getDate();
+        this.chartLabels = this.bodyweights
+          .map((value) => {
+            const date = new Date(value.date);
+            const month = date.getMonth() + 1;
+            const day = date.getDate();
 
-          return `${day}.${month}`;
-        });
+            return `${day}.${month}`;
+          })
+          .reverse();
 
-        this.chart = new Chart('canvas', {
-          type: 'line',
-          data: {
-            labels: dateLabel.reverse(),
-            datasets: [
-              {
-                label: 'Bodyweight',
-                data: this.bodyweights.map((value) => value.bodyweight),
-                fill: false,
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1,
-              },
-            ],
-          },
-        });
+        this.chartData = this.bodyweights
+          .map((value) => value.bodyweight)
+          .reverse();
       },
     });
   }

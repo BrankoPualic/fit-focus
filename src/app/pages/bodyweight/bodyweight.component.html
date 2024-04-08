@@ -22,7 +22,12 @@
         </div>
       </div>
       <div class="mt-5">
-        <canvas id="canvas">{{ chart }}</canvas>
+        @if (bodyweights.length > 0) {
+        <app-line-chart
+          [labels]="chartLabels"
+          [data]="chartData"
+        ></app-line-chart>
+        }
       </div>
     </div>
     <div class="col-md-4 col-12">
