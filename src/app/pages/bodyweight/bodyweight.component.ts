@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { IUserBodyweightDto } from '../../common/interfaces';
+import { ChartService } from '../../services/chart.service';
 
 @Component({
   selector: 'app-bodyweight',
@@ -12,7 +13,10 @@ export class BodyweightComponent implements OnInit {
   chartData: number[] = [];
   chartLabels: string[] = [];
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private chartService: ChartService
+  ) {}
 
   ngOnInit(): void {
     this.userService.getUserBodyweightLog().subscribe({
@@ -21,11 +25,7 @@ export class BodyweightComponent implements OnInit {
 
         this.chartLabels = this.bodyweights
           .map((value) => {
-            const date = new Date(value.date);
-            const month = date.getMonth() + 1;
-            const day = date.getDate();
-
-            return `${day}.${month}`;
+            return this.getBodyweightDateLabel(value.date);
           })
           .reverse();
 
@@ -42,9 +42,16 @@ export class BodyweightComponent implements OnInit {
       bodyweight: 88,
       bodyfat: null,
     });
+
+    const newValues = {
+      label: this.getBodyweightDateLabel(new Date().toString()),
+      bw: 88,
+    };
+
+    this.chartService.setNewBodyweightLog(newValues);
   }
 
-  getLatestBodyfatLog(): number | null {
+  getLatestBodyFatLog(): number | null {
     const filteredLogs = this.bodyweights.filter((log) => log.bodyfat !== null);
 
     filteredLogs.sort(
@@ -52,5 +59,13 @@ export class BodyweightComponent implements OnInit {
     );
 
     return filteredLogs.length > 0 ? filteredLogs[0].bodyfat : null;
+  }
+
+  private getBodyweightDateLabel(dateValue: string): string {
+    const date = new Date(dateValue);
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    return `${day}.${month}`;
   }
 }
