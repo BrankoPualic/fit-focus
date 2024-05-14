@@ -6,29 +6,44 @@ import { AuthDirective } from '../directives/auth.directive';
 import { LineChartComponent } from '../components/line-chart/line-chart.component';
 import { BodyweightModalComponent } from '../components/bodyweight-modal/bodyweight-modal.component';
 import { BsModalService } from 'ngx-bootstrap/modal';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import {
+  BsDatepickerConfig,
+  BsDatepickerModule,
+} from 'ngx-bootstrap/datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule, DatePipe } from '@angular/common';
+import { PaginationConfig, PaginationModule } from 'ngx-bootstrap/pagination';
 
 @NgModule({
   declarations: [AuthDirective, LineChartComponent, BodyweightModalComponent],
   imports: [
+    CommonModule,
     ToastrModule.forRoot({
       positionClass: 'toast-top-center',
     }),
+    ReactiveFormsModule,
+    TabsModule.forRoot(),
     BsDropdownModule.forRoot(),
     BsDatepickerModule.forRoot(),
-    TabsModule,
-    ReactiveFormsModule,
+    PaginationModule.forRoot(),
   ],
-  providers: [BsDropdownConfig, TabsetConfig, BsModalService],
+  providers: [
+    BsDropdownConfig,
+    TabsetConfig,
+    BsModalService,
+    DatePipe,
+    BsDatepickerConfig,
+    PaginationConfig,
+  ],
   exports: [
-    BsDropdownModule,
-    TabsModule,
     AuthDirective,
     LineChartComponent,
-    BsDatepickerModule,
     BodyweightModalComponent,
+    TabsModule,
     ReactiveFormsModule,
+    BsDropdownModule,
+    BsDatepickerModule,
+    PaginationModule,
   ],
 })
 export class SharedModule {}

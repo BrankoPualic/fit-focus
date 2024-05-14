@@ -56,8 +56,14 @@ export class LineChartComponent implements OnInit, OnDestroy {
   }
 
   private updateChart(label: string, newData: any): void {
-    this.chart.data.labels.push(label);
-    this.chart.data.datasets[0].data.push(newData);
+    if (this.labels.includes(label)) {
+      const index = this.chart.data.labels.indexOf(label);
+      this.chart.data.datasets[0].data[index] = newData;
+    } else {
+      this.chart.data.labels.push(label);
+      this.chart.data.datasets[0].data.push(newData);
+    }
+
     this.chart.update();
   }
 }

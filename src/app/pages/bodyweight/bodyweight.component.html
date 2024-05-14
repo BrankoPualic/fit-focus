@@ -12,7 +12,7 @@
           <h4>Bodyweight</h4>
           @if(bodyweights.length > 0){
           <h3 class="text-center fs-4">
-            {{ bodyweights[bodyweights.length - 1].bodyweight }} kg
+            {{ allBodyweights[0].bodyweight }} kg
           </h3>
           }
         </div>
@@ -51,11 +51,21 @@
             <td>{{ bw.date | date : "mediumDate" }}</td>
             <td>{{ bw.bodyweight }} kg</td>
             <td>{{ bw.bodyfat ?? "-" }}</td>
-            <td><i class="bi bi-pencil"></i></td>
+            <td (click)="editLog(bw)"><i class="bi bi-pencil"></i></td>
           </tr>
           }
         </tbody>
       </table>
+      <pagination
+        [boundaryLinks]="true"
+        [totalItems]="totalItems"
+        (pageChanged)="setPage($event)"
+        [itemsPerPage]="8"
+        previousText="&lsaquo;"
+        nextText="&rsaquo;"
+        firstText="&laquo;"
+        lastText="&raquo;"
+      ></pagination>
     </div>
   </div>
 </div>
@@ -63,5 +73,6 @@
 <ng-container *ngIf="modalIsOpened">
   <app-bodyweight-modal
     (closeModalEvent)="closeBwModal()"
+    [edit]="editingObj"
   ></app-bodyweight-modal>
 </ng-container>

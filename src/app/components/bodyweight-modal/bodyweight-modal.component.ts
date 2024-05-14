@@ -3,12 +3,16 @@ import {
   Component,
   ElementRef,
   EventEmitter,
+  Input,
   Output,
   TemplateRef,
   ViewChild,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ChartService } from '../../services/chart.service';
+import { BodyweightService } from '../../services/bodyweight.service';
+import { IUserBodyweightDto } from '../../common/interfaces';
 
 @Component({
   selector: 'app-bodyweight-modal',
@@ -16,6 +20,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
   styleUrl: './bodyweight-modal.component.scss',
 })
 export class BodyweightModalComponent implements AfterViewInit {
+  @Input('edit') editObj?: IUserBodyweightDto;
   @Output() closeModalEvent = new EventEmitter<void>();
   @ViewChild('btn') button?: ElementRef;
   modalRef?: BsModalRef;
@@ -26,19 +31,24 @@ export class BodyweightModalComponent implements AfterViewInit {
   };
   newLog: FormGroup = this.fb.group({});
 
-  constructor(private modalService: BsModalService, private fb: FormBuilder) {}
+  constructor(
+    private modalService: BsModalService,
+    private fb: FormBuilder,
+    private chartService: ChartService,
+    private bodyweightService: BodyweightService
+  ) {}
   ngAfterViewInit(): void {
     if (this.button) {
       this.button.nativeElement.click();
     }
 
-    this.initForm();
+    this.initForm(this.editObj);
   }
 
-  initForm() {
+  initForm(obj?: IUserBodyweightDto) {
     this.newLog = this.fb.group({
       bw: [
-        '',
+        obj?.bodyweight ? obj.bodyweight : '',
         [
           Validators.maxLength(4),
           Validators.required,
@@ -46,14 +56,13 @@ export class BodyweightModalComponent implements AfterViewInit {
         ],
       ],
       bf: [
-        '',
-        [
-          Validators.maxLength(4),
-          Validators.required,
-          Validators.pattern(/^\d{2,}(\.\d+)?$/),
-        ],
+        obj?.bodyfat ? obj.bodyfat : null,
+        [Validators.maxLength(4), Validators.pattern(/^\d{2,}(\.\d+)?$/)],
       ],
-      date: [this.defaultDate, Validators.required],
+      date: [
+        obj?.date ? new Date(obj.date) : this.defaultDate,
+        Validators.required,
+      ],
     });
   }
 
@@ -71,7 +80,22 @@ export class BodyweightModalComponent implements AfterViewInit {
   }
 
   logBodyweight() {
-    console.log(this.newLog.value);
+    const data = {
+      label: this.chartService.getBodyweightDateLabel(
+        this.newLog.get('date')?.value
+      ),
+      bw: this.newLog.get('bw')?.value,
+      bf: this.newLog.get('bf')?.value,
+    };
+    this.chartService.setNewBodyweightLog(data);
+
+    const data2: IUserBodyweightDto = {
+      date: this.newLog.get('date')?.value,
+      bodyweight: this.newLog.get('bw')?.value,
+      bodyfat: this.newLog.get('bf')?.value,
+    };
+    this.bodyweightService.setNewBodyweightLog(data2);
+
     this.hide();
   }
 }
