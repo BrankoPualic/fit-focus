@@ -10,9 +10,11 @@ export class ProfileComponent implements OnInit {
   user?: IUserDto;
   constructor(private userService: UserService) {}
 
-  ngOnInit(): void {
-    this.userService.getUserInfo().subscribe({
-      next: (user) => (this.user = user),
-    });
+  async ngOnInit(): Promise<void> {
+    this.user = await this.getUserInfo();
+  }
+
+  async getUserInfo(): Promise<IUserDto> {
+    return this.userService.getUserInfo().toResult();
   }
 }

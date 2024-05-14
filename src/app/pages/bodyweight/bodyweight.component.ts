@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../services/user.service';
 import { IUserBodyweightDto } from '../../common/interfaces';
 import { ChartService } from '../../services/chart.service';
 import { BodyweightService } from '../../services/bodyweight.service';
@@ -22,7 +21,6 @@ export class BodyweightComponent implements OnInit {
   modalRef?: BsModalRef;
 
   constructor(
-    private userService: UserService,
     private chartService: ChartService,
     private bodyweightService: BodyweightService,
     private datePipe: DatePipe,
@@ -30,27 +28,31 @@ export class BodyweightComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.userService.getUserBodyweightLog().subscribe({
-      next: (data) => {
-        this.bodyweights = data.reverse();
-        this.allBodyweights = this.bodyweights;
-        this.totalItems = this.allBodyweights.length;
-
-        this.showFirst8();
-
-        this.chartLabels = this.bodyweights
-          .map((value) => {
-            return this.chartService.getBodyweightDateLabel(value.date);
-          })
-          .reverse();
-
-        this.chartData = this.bodyweights
-          .map((value) => value.bodyweight)
-          .reverse();
-      },
-    });
+    this.initBodyweightData();
 
     this.subscriptionForBodyweightService();
+  }
+
+  async initBodyweightData() {
+    this.bodyweights = (await this.getBodyweightData()).reverse();
+    this.allBodyweights = this.bodyweights;
+    this.totalItems = this.allBodyweights.length;
+
+    this.showFirst8();
+
+    this.chartLabels = this.bodyweights
+      .map((value) => {
+        return this.chartService.getBodyweightDateLabel(value.date);
+      })
+      .reverse();
+
+    this.chartData = this.bodyweights
+      .map((value) => value.bodyweight)
+      .reverse();
+  }
+
+  async getBodyweightData(): Promise<IUserBodyweightDto[]> {
+    return this.bodyweightService.getUserBodyweightLog().toResult();
   }
 
   subscriptionForBodyweightService() {

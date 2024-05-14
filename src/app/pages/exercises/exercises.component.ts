@@ -13,9 +13,7 @@ export class ExercisesComponent implements OnInit {
   constructor(private exerciseService: ExerciseService) {}
 
   async ngOnInit(): Promise<void> {
-    console.log('uso');
     this.liftData = await this.getLiftData();
-    console.log(this.liftData);
   }
 
   async getLiftData(): Promise<ILiftDataDto> {

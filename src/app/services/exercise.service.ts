@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DataService } from './data.service';
 import { ILiftDataDto } from '../common/interfaces';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +8,7 @@ import { Observable } from 'rxjs';
 export class ExerciseService {
   constructor(private dataService: DataService) {}
 
-  getLiftData(): Observable<ILiftDataDto> {
+  getLiftData() {
     return this.dataService.get<ILiftDataDto>('assets/data/exercises.json');
   }
 }
