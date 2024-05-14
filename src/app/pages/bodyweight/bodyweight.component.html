@@ -50,7 +50,7 @@
           <tr>
             <td>{{ bw.date | date : "mediumDate" }}</td>
             <td>{{ bw.bodyweight }} kg</td>
-            <td>{{ bw.bodyfat ?? "-" }}</td>
+            <td>{{ bw.bodyfat ? bw.bodyfat + " %" : "-" }}</td>
             <td (click)="editLog(bw, template)">
               <i class="bi bi-pencil"></i>
             </td>

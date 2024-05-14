@@ -2,6 +2,11 @@
   <tabset>
     <tab heading="Workouts"></tab>
     <tab heading="Exercises"></tab>
-    <tab heading="Bodyweight"></tab>
+    <tab heading="Bodyweight" #tabA="tab">
+      <app-bodyweight
+        *ngIf="tabA.active"
+        class="user-func-page-heading"
+      ></app-bodyweight>
+    </tab>
   </tabset>
 </div>

@@ -40,7 +40,7 @@ export class BodyweightModalComponent implements OnInit {
       ],
       bf: [
         obj?.bodyfat ? obj.bodyfat : null,
-        [Validators.maxLength(4), Validators.pattern(/^\d{2,}(\.\d+)?$/)],
+        [Validators.maxLength(4), Validators.pattern(/^\d{1,}(\.\d+)?$/)],
       ],
       date: [
         obj?.date ? new Date(obj.date) : this.defaultDate,
