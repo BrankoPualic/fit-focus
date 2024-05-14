@@ -4,6 +4,7 @@ import { IUserBodyweightDto } from '../../common/interfaces';
 import { ChartService } from '../../services/chart.service';
 import { BodyweightService } from '../../services/bodyweight.service';
 import { DatePipe } from '@angular/common';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-bodyweight',
@@ -14,17 +15,18 @@ export class BodyweightComponent implements OnInit {
   bodyweights: IUserBodyweightDto[] = [];
   chartData: number[] = [];
   chartLabels: string[] = [];
-  modalIsOpened = false;
   editingObj?: IUserBodyweightDto;
   totalItems: number = 0;
   currentPage = 1;
   allBodyweights: IUserBodyweightDto[] = [];
+  modalRef?: BsModalRef;
 
   constructor(
     private userService: UserService,
     private chartService: ChartService,
     private bodyweightService: BodyweightService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private modalService: BsModalService
   ) {}
 
   ngOnInit(): void {
@@ -61,10 +63,6 @@ export class BodyweightComponent implements OnInit {
     });
   }
 
-  logBodyweight() {
-    this.modalIsOpened = true;
-  }
-
   getLatestBodyFatLog(): number | null {
     const filteredLogs = this.allBodyweights.filter(
       (log) => log.bodyfat !== null
@@ -77,20 +75,18 @@ export class BodyweightComponent implements OnInit {
     return filteredLogs.length > 0 ? filteredLogs[0].bodyfat : null;
   }
 
-  closeBwModal() {
-    this.modalIsOpened = false;
+  openBwModal(template: any) {
+    this.modalRef = this.modalService.show(template);
   }
 
-  editLog(obj: IUserBodyweightDto) {
+  editLog(obj: IUserBodyweightDto, template: any) {
     this.editingObj = obj;
-    this.modalIsOpened = true;
+    this.openBwModal(template);
   }
 
   setPage(page: any) {
     const pageSize = 8 * (page.page - 1);
-    console.log(this.bodyweights);
     this.bodyweights = this.allBodyweights.slice(pageSize, pageSize + 8);
-    console.log(this.bodyweights);
   }
 
   private updateGrid(data: IUserBodyweightDto): void {

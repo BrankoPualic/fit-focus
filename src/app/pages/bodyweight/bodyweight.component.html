@@ -32,7 +32,7 @@
     </div>
     <div class="col-md-4 col-12">
       <div class="my-4">
-        <button class="btn btn-light border" (click)="logBodyweight()">
+        <button class="btn btn-light border" (click)="openBwModal(template)">
           <i class="bi bi-plus-circle"></i> &nbsp;Add Bodyweight
         </button>
       </div>
@@ -51,7 +51,9 @@
             <td>{{ bw.date | date : "mediumDate" }}</td>
             <td>{{ bw.bodyweight }} kg</td>
             <td>{{ bw.bodyfat ?? "-" }}</td>
-            <td (click)="editLog(bw)"><i class="bi bi-pencil"></i></td>
+            <td (click)="editLog(bw, template)">
+              <i class="bi bi-pencil"></i>
+            </td>
           </tr>
           }
         </tbody>
@@ -70,9 +72,9 @@
   </div>
 </div>
 
-<ng-container *ngIf="modalIsOpened">
+<ng-template #template>
   <app-bodyweight-modal
-    (closeModalEvent)="closeBwModal()"
+    (closeModalEvent)="modalRef?.hide()"
     [edit]="editingObj"
   ></app-bodyweight-modal>
-</ng-container>
+</ng-template>

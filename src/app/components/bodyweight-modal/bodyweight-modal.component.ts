@@ -1,15 +1,5 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  Output,
-  TemplateRef,
-  ViewChild,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ChartService } from '../../services/chart.service';
 import { BodyweightService } from '../../services/bodyweight.service';
 import { IUserBodyweightDto } from '../../common/interfaces';
@@ -19,11 +9,9 @@ import { IUserBodyweightDto } from '../../common/interfaces';
   templateUrl: './bodyweight-modal.component.html',
   styleUrl: './bodyweight-modal.component.scss',
 })
-export class BodyweightModalComponent implements AfterViewInit {
+export class BodyweightModalComponent implements OnInit {
   @Input('edit') editObj?: IUserBodyweightDto;
   @Output() closeModalEvent = new EventEmitter<void>();
-  @ViewChild('btn') button?: ElementRef;
-  modalRef?: BsModalRef;
   defaultDate = new Date();
   bsConfig = {
     isAnimated: true,
@@ -32,16 +20,11 @@ export class BodyweightModalComponent implements AfterViewInit {
   newLog: FormGroup = this.fb.group({});
 
   constructor(
-    private modalService: BsModalService,
     private fb: FormBuilder,
     private chartService: ChartService,
     private bodyweightService: BodyweightService
   ) {}
-  ngAfterViewInit(): void {
-    if (this.button) {
-      this.button.nativeElement.click();
-    }
-
+  ngOnInit(): void {
     this.initForm(this.editObj);
   }
 
@@ -66,12 +49,7 @@ export class BodyweightModalComponent implements AfterViewInit {
     });
   }
 
-  open(content: TemplateRef<void>) {
-    this.modalRef = this.modalService.show(content);
-  }
-
   hide() {
-    this.modalRef?.hide();
     this.closeModalEvent.emit();
   }
 
