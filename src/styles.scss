@@ -27,3 +27,14 @@
   transform: translateX(-50%);
   color: $white;
 }
+
+.icons-inside-input {
+  position: absolute;
+  right: 20px;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.pointer {
+  cursor: pointer;
+}

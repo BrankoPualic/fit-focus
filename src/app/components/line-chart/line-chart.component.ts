@@ -21,7 +21,6 @@ export class LineChartComponent implements OnInit, OnDestroy {
 
     this.chartSubscription = this.chartService.bodyweightLog$.subscribe(
       (newValues) => {
-        console.log(newValues);
         if (newValues) {
           this.updateChart(newValues.label, newValues.bw);
         }

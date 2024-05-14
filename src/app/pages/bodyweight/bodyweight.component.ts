@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { IUserBodyweightDto } from '../../common/interfaces';
 import { ChartService } from '../../services/chart.service';
@@ -12,6 +12,7 @@ export class BodyweightComponent implements OnInit {
   bodyweights: IUserBodyweightDto[] = [];
   chartData: number[] = [];
   chartLabels: string[] = [];
+  modalIsOpened = false;
 
   constructor(
     private userService: UserService,
@@ -37,18 +38,19 @@ export class BodyweightComponent implements OnInit {
   }
 
   logBodyweight() {
-    this.bodyweights.unshift({
-      date: new Date().toString(),
-      bodyweight: 88,
-      bodyfat: null,
-    });
+    this.modalIsOpened = true;
+    // this.bodyweights.unshift({
+    //   date: new Date().toString(),
+    //   bodyweight: 88,
+    //   bodyfat: null,
+    // });
 
-    const newValues = {
-      label: this.getBodyweightDateLabel(new Date().toString()),
-      bw: 88,
-    };
+    // const newValues = {
+    //   label: this.getBodyweightDateLabel(new Date().toString()),
+    //   bw: 88,
+    // };
 
-    this.chartService.setNewBodyweightLog(newValues);
+    // this.chartService.setNewBodyweightLog(newValues);
   }
 
   getLatestBodyFatLog(): number | null {
@@ -67,5 +69,9 @@ export class BodyweightComponent implements OnInit {
     const day = date.getDate();
 
     return `${day}.${month}`;
+  }
+
+  closeBwModal() {
+    this.modalIsOpened = false;
   }
 }
