@@ -25,3 +25,15 @@ export interface IUserBodyweightDto {
   bodyweight: number;
   bodyfat: number | null;
 }
+
+export interface ILiftRecordDto {
+  date: string;
+  weight: number;
+}
+
+export interface ILiftDataDto {
+  benchPress: ILiftRecordDto[];
+  squat: ILiftRecordDto[];
+  deadlift: ILiftRecordDto[];
+  ohp: ILiftRecordDto[];
+}

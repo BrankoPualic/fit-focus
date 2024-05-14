@@ -10,6 +10,7 @@ import { ErrorModule } from './modules/error.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UserModule } from './modules/user.module';
 import { SharedModule } from './modules/shared.module';
+import './extensions/observable-extension';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],

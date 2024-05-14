@@ -6,6 +6,7 @@ import { BodyweightComponent } from '../pages/bodyweight/bodyweight.component';
 import { WorkoutsComponent } from '../pages/workouts/workouts.component';
 import { RouterModule, Routes } from '@angular/router';
 import { authGuard } from '../guards/auth.guard';
+import { ExercisesComponent } from '../pages/exercises/exercises.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,7 @@ const routes: Routes = [
       },
       { path: 'bodyweight', component: BodyweightComponent, pathMatch: 'full' },
       { path: 'workouts', component: WorkoutsComponent, pathMatch: 'full' },
+      { path: 'exercises', component: ExercisesComponent, pathMatch: 'full' },
     ],
   },
 ];
@@ -30,6 +32,7 @@ const routes: Routes = [
     user.UserFuncComponent,
     BodyweightComponent,
     WorkoutsComponent,
+    ExercisesComponent,
   ],
   imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
   providers: [],
