@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ChartService } from '../../services/chart.service';
 import { BodyweightService } from '../../services/bodyweight.service';
 import { IUserBodyweightDto } from '../../common/interfaces';
+import { DATASET_LABELS } from '../../common/constants';
 
 @Component({
   selector: 'app-bodyweight-modal',
@@ -59,11 +60,9 @@ export class BodyweightModalComponent implements OnInit {
 
   logBodyweight() {
     const data = {
-      label: this.chartService.getBodyweightDateLabel(
-        this.newLog.get('date')?.value
-      ),
-      bw: this.newLog.get('bw')?.value,
-      bf: this.newLog.get('bf')?.value,
+      label: this.chartService.getDateLabel(this.newLog.get('date')?.value),
+      value: this.newLog.get('bw')?.value,
+      datasetLabel: DATASET_LABELS.Bodyweight,
     };
     this.chartService.setNewBodyweightLog(data);
 
@@ -73,6 +72,22 @@ export class BodyweightModalComponent implements OnInit {
       bodyfat: this.newLog.get('bf')?.value,
     };
     this.bodyweightService.setNewBodyweightLog(data2);
+
+    if (this.newLog.get('bf')?.value) {
+      const bfData = {
+        label: this.chartService.getDateLabel(this.newLog.get('date')?.value),
+        value: this.newLog.get('bf')?.value,
+        datasetLabel: DATASET_LABELS.Bodyfat,
+      };
+      this.chartService.setNewBodyweightLog(bfData);
+
+      const bfData2: IUserBodyweightDto = {
+        date: this.newLog.get('date')?.value,
+        bodyweight: this.newLog.get('bw')?.value,
+        bodyfat: this.newLog.get('bf')?.value,
+      };
+      this.bodyweightService.setNewBodyweightLog(bfData2);
+    }
 
     this.hide();
   }

@@ -1,7 +1,8 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import Chart from 'chart.js/auto';
+import Chart, { Legend, plugins } from 'chart.js/auto';
 import { ChartService } from '../../services/chart.service';
 import { Subscription } from 'rxjs';
+import { DATASET_LABELS } from '../../common/constants';
 
 @Component({
   selector: 'app-line-chart',
@@ -22,7 +23,11 @@ export class LineChartComponent implements OnInit, OnDestroy {
     this.chartSubscription = this.chartService.bodyweightLog$.subscribe(
       (newValues) => {
         if (newValues) {
-          this.updateChart(newValues.label, newValues.bw);
+          this.updateChart(
+            newValues.label,
+            newValues.value,
+            newValues.datasetLabel
+          );
         }
       }
     );
@@ -36,34 +41,51 @@ export class LineChartComponent implements OnInit, OnDestroy {
       this.chart.destroy();
     }
   }
-
-  private createChart(labels: string[], data: any[]): void {
+  private createChart(labels: string[], datasets: any[]): void {
     this.chart = new Chart('canvas', {
       type: 'line',
       data: {
-        labels: labels,
-        datasets: [
-          {
-            label: 'Bodyweight',
-            data: data,
-            fill: false,
-            borderColor: 'rgb(75, 192, 192)',
-            tension: 0.1,
-          },
-        ],
+        labels,
+        datasets,
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
       },
     });
   }
 
-  private updateChart(label: string, newData: any): void {
-    if (this.labels.includes(label)) {
+  private updateChart(label: string, newData: any, datasetLabel: string): void {
+    const datasetIndex = this.chart.data.datasets.findIndex(
+      (dataset: any) => dataset.label === datasetLabel
+    );
+    if (datasetIndex !== -1) {
       const index = this.chart.data.labels.indexOf(label);
-      this.chart.data.datasets[0].data[index] = newData;
-    } else {
-      this.chart.data.labels.push(label);
-      this.chart.data.datasets[0].data.push(newData);
-    }
+      if (index !== -1) {
+        this.chart.data.datasets[datasetIndex].data[index] = newData;
+      } else {
+        this.chart.data.labels.push(label);
+        this.chart.data.datasets[datasetIndex].data.push(newData);
+      }
 
-    this.chart.update();
+      const chartData = this.chart.data.labels.map(
+        (label: any, index: number) => ({
+          label,
+          data: this.chart.data.datasets[datasetIndex].data[index],
+        })
+      );
+
+      chartData.sort(
+        (a: any, b: any) =>
+          new Date(a.label).getTime() - new Date(b.label).getTime()
+      );
+
+      this.chart.data.labels = chartData.map((entry: any) => entry.label);
+      this.chart.data.datasets[datasetIndex].data = chartData.map(
+        (entry: any) => entry.data
+      );
+
+      this.chart.update();
+    }
   }
 }

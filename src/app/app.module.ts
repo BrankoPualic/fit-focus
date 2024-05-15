@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserModule } from './modules/user.module';
 import { SharedModule } from './modules/shared.module';
 import './extensions/observable-extension';
+import './common/constants';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],

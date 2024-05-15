@@ -12,7 +12,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 })
 export class BodyweightComponent implements OnInit {
   bodyweights: IUserBodyweightDto[] = [];
-  chartData: number[] = [];
+  chartData: any[] = [];
   chartLabels: string[] = [];
   editingObj?: IUserBodyweightDto;
   totalItems: number = 0;
@@ -27,8 +27,9 @@ export class BodyweightComponent implements OnInit {
     private modalService: BsModalService
   ) {}
 
-  ngOnInit(): void {
-    this.initBodyweightData();
+  async ngOnInit(): Promise<void> {
+    await this.initBodyweightData();
+    this.initChart();
 
     this.subscriptionForBodyweightService();
   }
@@ -39,16 +40,33 @@ export class BodyweightComponent implements OnInit {
     this.totalItems = this.allBodyweights.length;
 
     this.showFirst8();
+  }
 
+  initChart() {
     this.chartLabels = this.bodyweights
       .map((value) => {
-        return this.chartService.getBodyweightDateLabel(value.date);
+        return value.date;
       })
       .reverse();
 
-    this.chartData = this.bodyweights
-      .map((value) => value.bodyweight)
-      .reverse();
+    const bwData = [
+      {
+        label: 'Bodyweight',
+        data: this.bodyweights.map((val) => val.bodyweight).reverse(),
+        borderColor: 'rgb(75, 192, 192)',
+        fill: false,
+      },
+    ];
+    const bfData = [
+      {
+        label: 'Bodyfat',
+        data: this.bodyweights.map((val) => val.bodyfat).reverse(),
+        borderColor: 'rgb(255, 99, 132)',
+        fill: false,
+        hidden: true,
+      },
+    ];
+    this.chartData = [...bwData, ...bfData];
   }
 
   async getBodyweightData(): Promise<IUserBodyweightDto[]> {
@@ -112,6 +130,14 @@ export class BodyweightComponent implements OnInit {
         date: this.datePipe.transform(data.date, 'yyyy-MM-dd')!,
       });
     }
+
+    this.allBodyweights = this.allBodyweights.sort((a, b) => {
+      if (a.date > b.date) {
+        return -1;
+      } else if (a.date < b.date) {
+        return 1;
+      } else return 0;
+    });
 
     this.bodyweights = [...this.allBodyweights];
 

@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
@@ -7,32 +8,26 @@ import { BehaviorSubject } from 'rxjs';
 export class ChartService {
   private bodyweightLog = new BehaviorSubject<{
     label: string;
-    bw: number;
-    bf: number | null;
+    value: number;
+    datasetLabel: string;
   } | null>(null);
   bodyweightLog$ = this.bodyweightLog.asObservable();
 
-  constructor() {}
+  constructor(private datePipe: DatePipe) {}
 
   setNewBodyweightLog({
     label,
-    bw,
-    bf,
+    value,
+    datasetLabel,
   }: {
     label: string;
-    bw: number;
-    bf: number | null;
+    value: number;
+    datasetLabel: string;
   }) {
-    bf
-      ? this.bodyweightLog.next({ label, bw, bf: null })
-      : this.bodyweightLog.next({ label, bw, bf });
+    this.bodyweightLog.next({ label, value, datasetLabel });
   }
 
-  getBodyweightDateLabel(dateValue: string): string {
-    const date = new Date(dateValue);
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-
-    return `${day}.${month}`;
+  getDateLabel(dateValue: string): string {
+    return this.datePipe.transform(dateValue, 'yyyy-MM-dd')!;
   }
 }
