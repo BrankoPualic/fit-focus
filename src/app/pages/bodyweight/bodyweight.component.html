@@ -42,7 +42,7 @@
             <th scope="col">Date</th>
             <th scope="col">Bodyweight</th>
             <th scope="col">Bodyfat</th>
-            <th scope="col">Action</th>
+            <th scope="col" style="text-align: center">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -51,7 +51,7 @@
             <td>{{ bw.date | date : "mediumDate" }}</td>
             <td>{{ bw.bodyweight }} kg</td>
             <td>{{ bw.bodyfat ? bw.bodyfat + " %" : "-" }}</td>
-            <td (click)="editLog(bw, template)">
+            <td (click)="editLog(bw, template)" style="text-align: center">
               <i class="bi bi-pencil"></i>
             </td>
           </tr>
