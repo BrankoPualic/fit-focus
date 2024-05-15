@@ -1,7 +1,12 @@
 <div class="container mt-1">
   <tabset>
     <tab heading="Workouts"></tab>
-    <tab heading="Exercises"></tab>
+    <tab heading="Exercises" #tabB="tab">
+      <app-exercises
+        *ngIf="tabB.active"
+        class="user-func-page-heading"
+      ></app-exercises>
+    </tab>
     <tab heading="Bodyweight" #tabA="tab">
       <app-bodyweight
         *ngIf="tabA.active"
