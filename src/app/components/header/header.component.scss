@@ -11,6 +11,9 @@ nav {
 .responsive-menu {
   display: none;
 }
+.bi-list {
+  display: none;
+}
 
 @media screen and (max-width: $width-lg) {
   .responsive-menu {
@@ -21,12 +24,15 @@ nav {
     transition: 0.3s;
     background-color: $primary;
     height: 100%;
-    width: 75%;
+    width: 50%;
     padding: 2rem 1rem;
   }
 
   .responsive-menu.show {
     right: 0;
+  }
+  .bi-list {
+    display: block;
   }
 
   .bi-x-circle,
