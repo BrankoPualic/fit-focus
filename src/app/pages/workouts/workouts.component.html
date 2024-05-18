@@ -10,7 +10,7 @@
       </button>
     </div>
     @for (workout of workouts; track $index) {
-    <div class="d-flex flex-column">
+    <div class="d-flex flex-column" style="overflow: auto">
       <h4>{{ workout.name }} - {{ workout.date | date : "shortDate" }}</h4>
 
       <table class="table">
