@@ -13,6 +13,7 @@ import {
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, DatePipe } from '@angular/common';
 import { PaginationConfig, PaginationModule } from 'ngx-bootstrap/pagination';
+import { TooltipConfig, TooltipModule } from 'ngx-bootstrap/tooltip';
 
 @NgModule({
   declarations: [AuthDirective, LineChartComponent, BodyweightModalComponent],
@@ -26,15 +27,9 @@ import { PaginationConfig, PaginationModule } from 'ngx-bootstrap/pagination';
     BsDropdownModule.forRoot(),
     BsDatepickerModule.forRoot(),
     PaginationModule.forRoot(),
+    TooltipModule.forRoot(),
   ],
-  providers: [
-    BsDropdownConfig,
-    TabsetConfig,
-    BsModalService,
-    DatePipe,
-    BsDatepickerConfig,
-    PaginationConfig,
-  ],
+  providers: [BsModalService, DatePipe],
   exports: [
     AuthDirective,
     LineChartComponent,
@@ -44,6 +39,7 @@ import { PaginationConfig, PaginationModule } from 'ngx-bootstrap/pagination';
     BsDropdownModule,
     BsDatepickerModule,
     PaginationModule,
+    TooltipModule,
   ],
 })
 export class SharedModule {}

@@ -37,7 +37,13 @@
             </td>
             <td>{{ set.weight ? set.weight + " kg" : "BW" }}</td>
             <td>{{ set.repetitions }}</td>
-            <td class="large-text-truncate">{{ set.notes }}</td>
+            <td
+              class="large-text-truncate"
+              tooltip="{{ set.notes }}"
+              placement="left"
+            >
+              {{ set.notes }}
+            </td>
             <td
               (click)="editExercise(exercise.sets[j], template)"
               style="text-align: center"
