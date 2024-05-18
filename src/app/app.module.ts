@@ -12,9 +12,10 @@ import { UserModule } from './modules/user.module';
 import { SharedModule } from './modules/shared.module';
 import './extensions/observable-extension';
 import './common/constants';
+import { CreateWorkoutComponent } from './pages/workouts/create-workout/create-workout.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, CreateWorkoutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
