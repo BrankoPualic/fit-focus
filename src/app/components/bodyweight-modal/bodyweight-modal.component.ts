@@ -14,10 +14,6 @@ export class BodyweightModalComponent implements OnInit {
   @Input('edit') editObj?: IUserBodyweightDto;
   @Output() closeModalEvent = new EventEmitter<void>();
   defaultDate = new Date();
-  bsConfig = {
-    isAnimated: true,
-    containerClass: 'theme-dark-blue',
-  };
   newLog: FormGroup = this.fb.group({});
 
   constructor(
@@ -25,7 +21,7 @@ export class BodyweightModalComponent implements OnInit {
     private chartService: ChartService,
     private bodyweightService: BodyweightService
   ) {}
-  
+
   ngOnInit(): void {
     this.initForm(this.editObj);
   }

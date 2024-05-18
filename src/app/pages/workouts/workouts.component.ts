@@ -1,8 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { IEditSetDto, ISetDto, IWorkoutDto } from '../../common/interfaces';
-import { Subscription } from 'rxjs';
+import { Subscription, map } from 'rxjs';
 import { WorkoutService } from '../../services/workout.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-workouts',
@@ -20,13 +21,15 @@ export class WorkoutsComponent implements OnInit {
 
   constructor(
     private modalService: BsModalService,
-    private workoutService: WorkoutService
+    private workoutService: WorkoutService,
+    private datePipe: DatePipe
   ) {}
 
   async ngOnInit(): Promise<void> {
     await this.initWorkoutsData();
 
     this.subscriptionForEditSet();
+    this.subscriptionForNewWorkout();
   }
 
   async initWorkoutsData() {
@@ -51,12 +54,34 @@ export class WorkoutsComponent implements OnInit {
     });
   }
 
+  subscriptionForNewWorkout() {
+    this.workoutService.newWorkout$
+      .pipe(
+        map((workout) => {
+          if (workout) {
+            workout.date = this.datePipe.transform(
+              workout.date,
+              'yyyy-MM-ddTHH:mm:ss.SSSZ'
+            )!;
+          }
+          return workout;
+        })
+      )
+      .subscribe({
+        next: (data) => {
+          if (data) {
+            this.updateGridWithNewWorkout(data);
+          }
+        },
+      });
+  }
+
   openWorkoutModal(template: any) {
     this.modalRef = this.modalService.show(template);
   }
 
   editExercise(
-    exerciseName: string,
+    name: string,
     date: string,
     set: ISetDto,
     exerciseIndex: number,
@@ -64,7 +89,7 @@ export class WorkoutsComponent implements OnInit {
     template: any
   ) {
     this.editingSet = {
-      name: exerciseName,
+      name,
       date,
       set,
       exerciseIndex,
@@ -87,6 +112,25 @@ export class WorkoutsComponent implements OnInit {
         el.exercises[data.exerciseIndex].sets[data.setIndex] = data.set;
       }
     });
+  }
+
+  private updateGridWithNewWorkout(data: IWorkoutDto) {
+    this.allWorkouts.unshift(data);
+
+    this.allWorkouts = this.allWorkouts.sort((a, b) => {
+      console.log(this.allWorkouts);
+      if (a.date > b.date) {
+        return -1;
+      } else if (a.date < b.date) {
+        return 1;
+      } else return 0;
+    });
+
+    this.workouts = [...this.allWorkouts];
+
+    this.totalItems = this.allWorkouts.length;
+
+    this.showFirst3();
   }
 
   private showFirst3() {

@@ -1,0 +1,23 @@
+@import "../../../../assets/styles/variables";
+table {
+  tbody {
+    tr {
+      td {
+        &:nth-last-child(1) {
+          width: 50px;
+          opacity: 0;
+        }
+      }
+
+      &:hover {
+        td {
+          background-color: $gray-200;
+          &:nth-last-child(1) {
+            opacity: 1;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

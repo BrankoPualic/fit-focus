@@ -62,3 +62,16 @@ export interface IEditSetDto {
   exerciseIndex: number;
   setIndex: number;
 }
+
+export interface IAddExerciseDto {
+  exercise: string;
+  weight?: number;
+  sets: number;
+  repetitions: number;
+  notes?: string;
+}
+
+export interface IExerciseTypeDto {
+  name: string;
+  region: string;
+}
