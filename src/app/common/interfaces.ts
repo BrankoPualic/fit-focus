@@ -54,3 +54,11 @@ export interface ISetDto {
   repetitions: number;
   notes?: string;
 }
+
+export interface IEditSetDto {
+  name: string;
+  date: string;
+  set: ISetDto;
+  exerciseIndex: number;
+  setIndex: number;
+}

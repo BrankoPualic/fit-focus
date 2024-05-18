@@ -14,9 +14,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, DatePipe } from '@angular/common';
 import { PaginationConfig, PaginationModule } from 'ngx-bootstrap/pagination';
 import { TooltipConfig, TooltipModule } from 'ngx-bootstrap/tooltip';
+import { WorkoutModalComponent } from '../components/workout-modal/workout-modal.component';
 
 @NgModule({
-  declarations: [AuthDirective, LineChartComponent, BodyweightModalComponent],
+  declarations: [
+    AuthDirective,
+    LineChartComponent,
+    BodyweightModalComponent,
+    WorkoutModalComponent,
+  ],
   imports: [
     CommonModule,
     ToastrModule.forRoot({
@@ -40,6 +46,7 @@ import { TooltipConfig, TooltipModule } from 'ngx-bootstrap/tooltip';
     BsDatepickerModule,
     PaginationModule,
     TooltipModule,
+    WorkoutModalComponent,
   ],
 })
 export class SharedModule {}

@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { IWorkoutDto } from '../../common/interfaces';
+import { IEditSetDto, ISetDto, IWorkoutDto } from '../../common/interfaces';
 import { Subscription } from 'rxjs';
 import { WorkoutService } from '../../services/workout.service';
 
@@ -13,7 +13,7 @@ export class WorkoutsComponent implements OnInit {
   workouts: IWorkoutDto[] = [];
   allWorkouts: IWorkoutDto[] = [];
   modalRef?: BsModalRef;
-  editingSet: any;
+  editingSet = {} as IEditSetDto;
 
   totalItems = 0;
   currentPage = 1;
@@ -25,6 +25,8 @@ export class WorkoutsComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     await this.initWorkoutsData();
+
+    this.subscriptionForEditSet();
   }
 
   async initWorkoutsData() {
@@ -39,18 +41,52 @@ export class WorkoutsComponent implements OnInit {
     return this.workoutService.getAllWorkouts().toResult();
   }
 
+  subscriptionForEditSet() {
+    this.workoutService.editSet$.subscribe({
+      next: (data) => {
+        if (data) {
+          this.updateGrid(data);
+        }
+      },
+    });
+  }
+
   openWorkoutModal(template: any) {
     this.modalRef = this.modalService.show(template);
   }
 
-  editExercise(set: any, template: any) {
-    this.editingSet = set;
+  editExercise(
+    exerciseName: string,
+    date: string,
+    set: ISetDto,
+    exerciseIndex: number,
+    setIndex: number,
+    template: any
+  ) {
+    this.editingSet = {
+      name: exerciseName,
+      date,
+      set,
+      exerciseIndex,
+      setIndex,
+    };
     this.openWorkoutModal(template);
   }
 
   setPage(page: any) {
     const pageSize = 3 * (page.page - 1);
     this.workouts = this.allWorkouts.slice(pageSize, pageSize + 3);
+  }
+
+  private updateGrid(data: IEditSetDto) {
+    this.workouts.forEach((el) => {
+      if (
+        el.date === data.date &&
+        el.exercises[data.exerciseIndex].name === data.name
+      ) {
+        el.exercises[data.exerciseIndex].sets[data.setIndex] = data.set;
+      }
+    });
   }
 
   private showFirst3() {

@@ -25,6 +25,7 @@ export class BodyweightModalComponent implements OnInit {
     private chartService: ChartService,
     private bodyweightService: BodyweightService
   ) {}
+  
   ngOnInit(): void {
     this.initForm(this.editObj);
   }

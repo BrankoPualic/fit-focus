@@ -5,7 +5,7 @@
   </div>
   <div class="d-flex flex-column justify-content-start my-4">
     <div class="d-flex flex-row flex-wrap mb-4">
-      <button class="btn btn-light border" (click)="openWorkoutModal(template)">
+      <button class="btn btn-light border" routerLink="/workouts/create">
         <i class="bi bi-plus-circle"></i> &nbsp;Add Workout
       </button>
     </div>
@@ -45,7 +45,16 @@
               {{ set.notes }}
             </td>
             <td
-              (click)="editExercise(exercise.sets[j], template)"
+              (click)="
+                editExercise(
+                  workout.exercises[i].name,
+                  workout.date,
+                  set,
+                  i,
+                  j,
+                  template
+                )
+              "
               style="text-align: center"
             >
               <i class="bi bi-pencil"></i>
@@ -70,8 +79,8 @@
 </div>
 
 <ng-template #template>
-  <!-- <app-bodyweight-modal
-      (closeModalEvent)="modalRef?.hide()"
-      [edit]="editingObj"
-    ></app-bodyweight-modal> -->
+  <app-workout-modal
+    (closeModalEvent)="modalRef?.hide()"
+    [edit]="editingSet"
+  ></app-workout-modal>
 </ng-template>
