@@ -1,0 +1,1131 @@
+[
+  {
+    "name": "Push",
+    "date": "2024-04-11T16:22:33.999Z",
+    "exercises": [
+      {
+        "name": "Bench Press",
+        "sets": [
+          {
+            "weight": 90,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 100,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 110,
+            "repetitions": 5,
+            "notes": null
+          },
+          {
+            "weight": 120,
+            "repetitions": 3,
+            "notes": "New 3 rep PR!!!"
+          }
+        ]
+      },
+      {
+        "name": "Dips",
+        "sets": [
+          {
+            "weight": null,
+            "repetitions": 20,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 18,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 15,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "OHP",
+        "sets": [
+          {
+            "weight": 50,
+            "repetitions": 8,
+            "notes": "Shoulder still hurts."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pull",
+    "date": "2024-04-13T16:22:33.999Z",
+    "exercises": [
+      {
+        "name": "Deadlift",
+        "sets": [
+          {
+            "weight": 100,
+            "repetitions": 10,
+            "notes": null
+          },
+          {
+            "weight": 120,
+            "repetitions": 8,
+            "notes": null
+          },
+          {
+            "weight": 140,
+            "repetitions": 5,
+            "notes": "Felt strong today"
+          }
+        ]
+      },
+      {
+        "name": "Pull-ups",
+        "sets": [
+          {
+            "weight": null,
+            "repetitions": 10,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 8,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 6,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "Barbell Row",
+        "sets": [
+          {
+            "weight": 60,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 70,
+            "repetitions": 10,
+            "notes": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Legs",
+    "date": "2024-04-15T16:22:33.999Z",
+    "exercises": [
+      {
+        "name": "Squat",
+        "sets": [
+          {
+            "weight": 80,
+            "repetitions": 15,
+            "notes": null
+          },
+          {
+            "weight": 100,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 120,
+            "repetitions": 8,
+            "notes": "Struggled with form"
+          }
+        ]
+      },
+      {
+        "name": "Leg Press",
+        "sets": [
+          {
+            "weight": 200,
+            "repetitions": 20,
+            "notes": null
+          },
+          {
+            "weight": 220,
+            "repetitions": 15,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "Calf Raises",
+        "sets": [
+          {
+            "weight": 60,
+            "repetitions": 25,
+            "notes": null
+          },
+          {
+            "weight": 70,
+            "repetitions": 20,
+            "notes": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Push",
+    "date": "2024-04-17T16:22:33.999Z",
+    "exercises": [
+      {
+        "name": "Bench Press",
+        "sets": [
+          {
+            "weight": 95,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 105,
+            "repetitions": 10,
+            "notes": null
+          },
+          {
+            "weight": 115,
+            "repetitions": 6,
+            "notes": null
+          },
+          {
+            "weight": 125,
+            "repetitions": 3,
+            "notes": "New 3 rep PR!!!"
+          }
+        ]
+      },
+      {
+        "name": "Dips",
+        "sets": [
+          {
+            "weight": null,
+            "repetitions": 18,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 16,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 14,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "OHP",
+        "sets": [
+          {
+            "weight": 55,
+            "repetitions": 8,
+            "notes": "Shoulder improving"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pull",
+    "date": "2024-04-19T16:22:33.999Z",
+    "exercises": [
+      {
+        "name": "Deadlift",
+        "sets": [
+          {
+            "weight": 105,
+            "repetitions": 10,
+            "notes": null
+          },
+          {
+            "weight": 125,
+            "repetitions": 8,
+            "notes": null
+          },
+          {
+            "weight": 145,
+            "repetitions": 5,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "Pull-ups",
+        "sets": [
+          {
+            "weight": null,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 10,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 8,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "Barbell Row",
+        "sets": [
+          {
+            "weight": 65,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 75,
+            "repetitions": 10,
+            "notes": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Legs",
+    "date": "2024-04-21T16:22:33.999Z",
+    "exercises": [
+      {
+        "name": "Squat",
+        "sets": [
+          {
+            "weight": 85,
+            "repetitions": 15,
+            "notes": null
+          },
+          {
+            "weight": 105,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 125,
+            "repetitions": 8,
+            "notes": "Better form"
+          }
+        ]
+      },
+      {
+        "name": "Leg Press",
+        "sets": [
+          {
+            "weight": 210,
+            "repetitions": 20,
+            "notes": null
+          },
+          {
+            "weight": 230,
+            "repetitions": 15,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "Calf Raises",
+        "sets": [
+          {
+            "weight": 65,
+            "repetitions": 25,
+            "notes": null
+          },
+          {
+            "weight": 75,
+            "repetitions": 20,
+            "notes": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Push",
+    "date": "2024-04-23T16:22:33.999Z",
+    "exercises": [
+      {
+        "name": "Bench Press",
+        "sets": [
+          {
+            "weight": 100,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 110,
+            "repetitions": 10,
+            "notes": null
+          },
+          {
+            "weight": 120,
+            "repetitions": 6,
+            "notes": null
+          },
+          {
+            "weight": 130,
+            "repetitions": 3,
+            "notes": "New 3 rep PR!!!"
+          }
+        ]
+      },
+      {
+        "name": "Dips",
+        "sets": [
+          {
+            "weight": null,
+            "repetitions": 20,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 18,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 16,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "OHP",
+        "sets": [
+          {
+            "weight": 60,
+            "repetitions": 8,
+            "notes": "Shoulder much better"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pull",
+    "date": "2024-04-25T16:22:33.999Z",
+    "exercises": [
+      {
+        "name": "Deadlift",
+        "sets": [
+          {
+            "weight": 110,
+            "repetitions": 10,
+            "notes": null
+          },
+          {
+            "weight": 130,
+            "repetitions": 8,
+            "notes": null
+          },
+          {
+            "weight": 150,
+            "repetitions": 5,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "Pull-ups",
+        "sets": [
+          {
+            "weight": null,
+            "repetitions": 14,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 10,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "Barbell Row",
+        "sets": [
+          {
+            "weight": 70,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 80,
+            "repetitions": 10,
+            "notes": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Legs",
+    "date": "2024-04-27T16:22:33.999Z",
+    "exercises": [
+      {
+        "name": "Squat",
+        "sets": [
+          {
+            "weight": 90,
+            "repetitions": 15,
+            "notes": null
+          },
+          {
+            "weight": 110,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 130,
+            "repetitions": 8,
+            "notes": "Great form"
+          }
+        ]
+      },
+      {
+        "name": "Leg Press",
+        "sets": [
+          {
+            "weight": 220,
+            "repetitions": 20,
+            "notes": null
+          },
+          {
+            "weight": 240,
+            "repetitions": 15,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "Calf Raises",
+        "sets": [
+          {
+            "weight": 70,
+            "repetitions": 25,
+            "notes": null
+          },
+          {
+            "weight": 80,
+            "repetitions": 20,
+            "notes": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Push",
+    "date": "2024-04-29T16:22:33.999Z",
+    "exercises": [
+      {
+        "name": "Bench Press",
+        "sets": [
+          {
+            "weight": 105,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 115,
+            "repetitions": 10,
+            "notes": null
+          },
+          {
+            "weight": 125,
+            "repetitions": 6,
+            "notes": null
+          },
+          {
+            "weight": 135,
+            "repetitions": 3,
+            "notes": "New 3 rep PR!!!"
+          }
+        ]
+      },
+      {
+        "name": "Dips",
+        "sets": [
+          {
+            "weight": null,
+            "repetitions": 22,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 20,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 18,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "OHP",
+        "sets": [
+          {
+            "weight": 65,
+            "repetitions": 8,
+            "notes": "Shoulder perfect"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pull",
+    "date": "2024-05-01T16:22:33.999Z",
+    "exercises": [
+      {
+        "name": "Deadlift",
+        "sets": [
+          {
+            "weight": 115,
+            "repetitions": 10,
+            "notes": null
+          },
+          {
+            "weight": 135,
+            "repetitions": 8,
+            "notes": null
+          },
+          {
+            "weight": 155,
+            "repetitions": 5,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "Pull-ups",
+        "sets": [
+          {
+            "weight": null,
+            "repetitions": 16,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 14,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 12,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "Barbell Row",
+        "sets": [
+          {
+            "weight": 75,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 85,
+            "repetitions": 10,
+            "notes": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Legs",
+    "date": "2024-05-03T16:22:33.999Z",
+    "exercises": [
+      {
+        "name": "Squat",
+        "sets": [
+          {
+            "weight": 95,
+            "repetitions": 15,
+            "notes": null
+          },
+          {
+            "weight": 115,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 135,
+            "repetitions": 8,
+            "notes": "Strong form"
+          }
+        ]
+      },
+      {
+        "name": "Leg Press",
+        "sets": [
+          {
+            "weight": 230,
+            "repetitions": 20,
+            "notes": null
+          },
+          {
+            "weight": 250,
+            "repetitions": 15,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "Calf Raises",
+        "sets": [
+          {
+            "weight": 75,
+            "repetitions": 25,
+            "notes": null
+          },
+          {
+            "weight": 85,
+            "repetitions": 20,
+            "notes": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Push",
+    "date": "2024-05-05T16:22:33.999Z",
+    "exercises": [
+      {
+        "name": "Bench Press",
+        "sets": [
+          {
+            "weight": 110,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 120,
+            "repetitions": 10,
+            "notes": null
+          },
+          {
+            "weight": 130,
+            "repetitions": 6,
+            "notes": null
+          },
+          {
+            "weight": 140,
+            "repetitions": 3,
+            "notes": "New 3 rep PR!!!"
+          }
+        ]
+      },
+      {
+        "name": "Dips",
+        "sets": [
+          {
+            "weight": null,
+            "repetitions": 24,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 22,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 20,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "OHP",
+        "sets": [
+          {
+            "weight": 70,
+            "repetitions": 8,
+            "notes": "Shoulder excellent"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pull",
+    "date": "2024-05-07T16:22:33.999Z",
+    "exercises": [
+      {
+        "name": "Deadlift",
+        "sets": [
+          {
+            "weight": 120,
+            "repetitions": 10,
+            "notes": null
+          },
+          {
+            "weight": 140,
+            "repetitions": 8,
+            "notes": null
+          },
+          {
+            "weight": 160,
+            "repetitions": 5,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "Pull-ups",
+        "sets": [
+          {
+            "weight": null,
+            "repetitions": 18,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 16,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 14,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "Barbell Row",
+        "sets": [
+          {
+            "weight": 80,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 90,
+            "repetitions": 10,
+            "notes": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Legs",
+    "date": "2024-05-09T16:22:33.999Z",
+    "exercises": [
+      {
+        "name": "Squat",
+        "sets": [
+          {
+            "weight": 100,
+            "repetitions": 15,
+            "notes": null
+          },
+          {
+            "weight": 120,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 140,
+            "repetitions": 8,
+            "notes": "Excellent form"
+          }
+        ]
+      },
+      {
+        "name": "Leg Press",
+        "sets": [
+          {
+            "weight": 240,
+            "repetitions": 20,
+            "notes": null
+          },
+          {
+            "weight": 260,
+            "repetitions": 15,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "Calf Raises",
+        "sets": [
+          {
+            "weight": 80,
+            "repetitions": 25,
+            "notes": null
+          },
+          {
+            "weight": 90,
+            "repetitions": 20,
+            "notes": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Push",
+    "date": "2024-05-11T16:22:33.999Z",
+    "exercises": [
+      {
+        "name": "Bench Press",
+        "sets": [
+          {
+            "weight": 115,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 125,
+            "repetitions": 10,
+            "notes": null
+          },
+          {
+            "weight": 135,
+            "repetitions": 6,
+            "notes": null
+          },
+          {
+            "weight": 145,
+            "repetitions": 3,
+            "notes": "New 3 rep PR!!!"
+          }
+        ]
+      },
+      {
+        "name": "Dips",
+        "sets": [
+          {
+            "weight": null,
+            "repetitions": 26,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 24,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 22,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "OHP",
+        "sets": [
+          {
+            "weight": 75,
+            "repetitions": 8,
+            "notes": "Shoulder feels great"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pull",
+    "date": "2024-05-13T16:22:33.999Z",
+    "exercises": [
+      {
+        "name": "Deadlift",
+        "sets": [
+          {
+            "weight": 125,
+            "repetitions": 10,
+            "notes": null
+          },
+          {
+            "weight": 145,
+            "repetitions": 8,
+            "notes": null
+          },
+          {
+            "weight": 165,
+            "repetitions": 5,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "Pull-ups",
+        "sets": [
+          {
+            "weight": null,
+            "repetitions": 20,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 18,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 16,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "Barbell Row",
+        "sets": [
+          {
+            "weight": 85,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 95,
+            "repetitions": 10,
+            "notes": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Legs",
+    "date": "2024-05-15T16:22:33.999Z",
+    "exercises": [
+      {
+        "name": "Squat",
+        "sets": [
+          {
+            "weight": 105,
+            "repetitions": 15,
+            "notes": null
+          },
+          {
+            "weight": 125,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 145,
+            "repetitions": 8,
+            "notes": "Perfect form"
+          }
+        ]
+      },
+      {
+        "name": "Leg Press",
+        "sets": [
+          {
+            "weight": 250,
+            "repetitions": 20,
+            "notes": null
+          },
+          {
+            "weight": 270,
+            "repetitions": 15,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "Calf Raises",
+        "sets": [
+          {
+            "weight": 85,
+            "repetitions": 25,
+            "notes": null
+          },
+          {
+            "weight": 95,
+            "repetitions": 20,
+            "notes": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Push",
+    "date": "2024-05-17T16:22:33.999Z",
+    "exercises": [
+      {
+        "name": "Bench Press",
+        "sets": [
+          {
+            "weight": 120,
+            "repetitions": 12,
+            "notes": null
+          },
+          {
+            "weight": 130,
+            "repetitions": 10,
+            "notes": null
+          },
+          {
+            "weight": 140,
+            "repetitions": 6,
+            "notes": null
+          },
+          {
+            "weight": 150,
+            "repetitions": 3,
+            "notes": "New 3 rep PR!!!"
+          }
+        ]
+      },
+      {
+        "name": "Dips",
+        "sets": [
+          {
+            "weight": null,
+            "repetitions": 28,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 26,
+            "notes": null
+          },
+          {
+            "weight": null,
+            "repetitions": 24,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "OHP",
+        "sets": [
+          {
+            "weight": 80,
+            "repetitions": 8,
+            "notes": "Shoulder strong"
+          }
+        ]
+      }
+    ]
+  }
+]

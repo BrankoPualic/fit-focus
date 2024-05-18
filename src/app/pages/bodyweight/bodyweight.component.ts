@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { IUserBodyweightDto } from '../../common/interfaces';
-import { ChartService } from '../../services/chart.service';
 import { BodyweightService } from '../../services/bodyweight.service';
 import { DatePipe } from '@angular/common';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
@@ -21,7 +20,6 @@ export class BodyweightComponent implements OnInit {
   modalRef?: BsModalRef;
 
   constructor(
-    private chartService: ChartService,
     private bodyweightService: BodyweightService,
     private datePipe: DatePipe,
     private modalService: BsModalService

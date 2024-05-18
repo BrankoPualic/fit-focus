@@ -37,3 +37,20 @@ export interface ILiftDataDto {
   deadlift: ILiftRecordDto[];
   ohp: ILiftRecordDto[];
 }
+
+export interface IWorkoutDto {
+  name: string;
+  date: string;
+  exercises: IExerciseDto[];
+}
+
+export interface IExerciseDto {
+  name: string;
+  sets: ISetDto[];
+}
+
+export interface ISetDto {
+  weight: number | null;
+  repetitions: number;
+  notes?: string;
+}

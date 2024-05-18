@@ -1,1 +1,71 @@
-<p>workouts works!</p>
+<div class="background-image" style="height: 10rem"></div>
+<div class="container">
+  <div class="background-image-content">
+    <h2 style="font-size: 3rem" class="mt-5">Workouts</h2>
+  </div>
+  <div class="d-flex flex-column justify-content-start my-4">
+    <div class="d-flex flex-row flex-wrap mb-4">
+      <button class="btn btn-light border" (click)="openWorkoutModal(template)">
+        <i class="bi bi-plus-circle"></i> &nbsp;Add Workout
+      </button>
+    </div>
+    @for (workout of workouts; track $index) {
+    <div class="d-flex flex-column">
+      <h4>{{ workout.name }} - {{ workout.date | date : "shortDate" }}</h4>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" style="width: 200px">Exercise</th>
+            <th scope="col" style="width: 200px">Weight</th>
+            <th scope="col" style="width: 200px">Repetitions</th>
+            <th scope="col">Notes</th>
+            <th scope="col" style="text-align: center">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (exercise of workout.exercises; let i = $index; track i) {
+          @for(set of exercise.sets; let j = $index; track j){
+          <tr>
+            <td>
+              {{
+                j > 0 &&
+                workout.exercises[i].name !== workout.exercises[i - 1]?.name
+                  ? "--"
+                  : exercise.name
+              }}
+            </td>
+            <td>{{ set.weight ? set.weight + " kg" : "BW" }}</td>
+            <td>{{ set.repetitions }}</td>
+            <td class="large-text-truncate">{{ set.notes }}</td>
+            <td
+              (click)="editExercise(exercise.sets[j], template)"
+              style="text-align: center"
+            >
+              <i class="bi bi-pencil"></i>
+            </td>
+          </tr>
+          } }
+        </tbody>
+      </table>
+    </div>
+    }
+    <pagination
+      [boundaryLinks]="true"
+      [totalItems]="totalItems"
+      (pageChanged)="setPage($event)"
+      [itemsPerPage]="3"
+      previousText="&lsaquo;"
+      nextText="&rsaquo;"
+      firstText="&laquo;"
+      lastText="&raquo;"
+    ></pagination>
+  </div>
+</div>
+
+<ng-template #template>
+  <!-- <app-bodyweight-modal
+      (closeModalEvent)="modalRef?.hide()"
+      [edit]="editingObj"
+    ></app-bodyweight-modal> -->
+</ng-template>

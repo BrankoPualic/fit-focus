@@ -38,3 +38,10 @@
 .pointer {
   cursor: pointer;
 }
+
+.large-text-truncate {
+  text-overflow: ellipsis;
+  max-width: 10rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
