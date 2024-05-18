@@ -1,6 +1,10 @@
 <div class="container mt-1">
   <tabset>
-    <tab heading="Workouts"></tab>
+    <tab heading="Workouts" #tabC="tab">
+      @if(tabC.active){
+      <app-workouts class="user-func-page-heading"></app-workouts>
+      }
+    </tab>
     <tab heading="Exercises" #tabB="tab">
       <app-exercises
         *ngIf="tabB.active"
