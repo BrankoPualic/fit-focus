@@ -1,5 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary px-sm-5">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary px-sm-5 px-3">
   <a class="navbar-brand" routerLink="">FitFocus</a>
+  <i class="bi bi-list" (click)="toggleNavbar()"></i>
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto w-100">
       <li
@@ -30,6 +31,7 @@
         <a class="nav-link">Bodyweight</a>
       </li>
       <li
+        id="my-profile"
         class="nav-item dropdown"
         style="margin-left: auto"
         dropdown
@@ -62,6 +64,57 @@
           >
         </div>
       </li>
+    </ul>
+  </div>
+
+  <div class="responsive-menu" [ngClass]="{ show: navbarOpen }">
+    <ul class="navbar-nav mr-auto w-100">
+      <li
+        *appAuth
+        class="nav-item"
+        routerLink="workouts"
+        routerLinkActive="active"
+        style="cursor: pointer"
+      >
+        <a class="nav-link" (click)="toggleNavbar()">Workouts</a>
+      </li>
+      <li
+        *appAuth
+        class="nav-item"
+        routerLink="exercises"
+        routerLinkActive="active"
+        style="cursor: pointer"
+      >
+        <a class="nav-link" (click)="toggleNavbar()">Exercises</a>
+      </li>
+      <li
+        *appAuth
+        class="nav-item"
+        routerLink="bodyweight"
+        routerLinkActive="active"
+        style="cursor: pointer"
+      >
+        <a class="nav-link" (click)="toggleNavbar()">Bodyweight</a>
+      </li>
+      <li
+        class="nav-item"
+        routerLink="profile"
+        routerLinkActive="active"
+        *appAuth
+      >
+        <a class="nav-link" routerLink="profile" (click)="toggleNavbar()"
+          >My profile</a
+        >
+      </li>
+      <li class="nav-item" *appAuth>
+        <a
+          class="nav-link"
+          (click)="signout(); toggleNavbar()"
+          style="cursor: pointer"
+          >Sign out</a
+        >
+      </li>
+      <i class="bi bi-x-circle" (click)="toggleNavbar()"></i>
     </ul>
   </div>
 </nav>

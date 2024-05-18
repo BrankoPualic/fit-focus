@@ -7,9 +7,15 @@ import { AuthenticationService } from '../../services/authentication.service';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
+  navbarOpen = false;
+
   constructor(private authService: AuthenticationService) {}
 
   signout() {
     this.authService.signout();
+  }
+
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
   }
 }

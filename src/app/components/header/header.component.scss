@@ -1,7 +1,39 @@
+@import "../../../assets/styles/variables";
+
 nav {
   z-index: 1;
 }
 
 .active a {
   color: white;
+}
+
+.responsive-menu {
+  display: none;
+}
+
+@media screen and (max-width: $width-lg) {
+  .responsive-menu {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    transition: 0.3s;
+    background-color: $primary;
+    height: 100%;
+    width: 75%;
+    padding: 2rem 1rem;
+  }
+
+  .responsive-menu.show {
+    right: 0;
+  }
+
+  .bi-x-circle,
+  .bi-list {
+    color: white;
+    font-size: 1.5em;
+    position: absolute;
+    right: 1rem;
+  }
 }
