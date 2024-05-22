@@ -1,0 +1,118 @@
+[
+  {
+    "name": "Bench Press",
+    "region": "Chest"
+  },
+  {
+    "name": "Incline Bench Press",
+    "region": "Chest"
+  },
+  {
+    "name": "Dummbell Chest Fly",
+    "region": "Chest"
+  },
+  {
+    "name": "Dumbbell Chest Press",
+    "region": "Chest"
+  },
+  {
+    "name": "Incline Dumbbell Chest Press",
+    "region": "Chest"
+  },
+  {
+    "name": "Pull up",
+    "region": "Back"
+  },
+  {
+    "name": "Lat Pulldown",
+    "region": "Back"
+  },
+  {
+    "name": "Barbell Row",
+    "region": "Back"
+  },
+  {
+    "name": "Chest Supported Row",
+    "region": "Back"
+  },
+  {
+    "name": "T-Bar Row",
+    "region": "Back"
+  },
+  {
+    "name": "Squat",
+    "region": "Legs"
+  },
+  {
+    "name": "Leg Press",
+    "region": "Legs"
+  },
+  {
+    "name": "Leg Extension",
+    "region": "Legs"
+  },
+  {
+    "name": "Leg Curl",
+    "region": "Legs"
+  },
+  {
+    "name": "Calf Raises",
+    "region": "Legs"
+  },
+  {
+    "name": "Barbell Curl",
+    "region": "Arms"
+  },
+  {
+    "name": "Dumbbell Curl",
+    "region": "Arms"
+  },
+  {
+    "name": "Hammer Curl",
+    "region": "Arms"
+  },
+  {
+    "name": "Skullcusher",
+    "region": "Arms"
+  },
+  {
+    "name": "Tricep Pushdown",
+    "region": "Arms"
+  },
+  {
+    "name": "Overhead Tricep Extension",
+    "region": "Arms"
+  },
+  {
+    "name": "Overhead Press",
+    "region": "Shoulders"
+  },
+  {
+    "name": "Military Press",
+    "region": "Shoulders"
+  },
+  {
+    "name": "Lateral Raises",
+    "region": "Shoulders"
+  },
+  {
+    "name": "Rear Delt Raises",
+    "region": "Shoulders"
+  },
+  {
+    "name": "Dumbbell Shoulder Press",
+    "region": "Shoulders"
+  },
+  {
+    "name": "Sit ups",
+    "region": "Core"
+  },
+  {
+    "name": "Russian Twists",
+    "region": "Core"
+  },
+  {
+    "name": "Back Extensions",
+    "region": "Core"
+  }
+]
